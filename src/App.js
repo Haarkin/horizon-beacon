@@ -2,8 +2,10 @@ import React from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import MainPage from './pages/MainPage';
 import Novels from './pages/Novels';
+import UsersRootLayout from './pages/UsersRoot';
 import UsersList from './pages/UsersList';
 import UserPage from './pages/UserPage';
+import NewUserPage from './pages/NewUserPage';
 import Arts from './pages/Arts';
 import ArksList from './pages/ArksList';
 import Archive from './pages/Archive';
@@ -21,23 +23,19 @@ const router = createBrowserRouter([
       { index: true, element: <MainPage /> },
       {
         path: 'novels',
-        element: <Novels />,
-        action: novelsAction,
+        element: <Novels />
       },
       {
         path: 'arks',
-        element: <ArksList />,
-        action: arksAction,
+        element: <ArksList />
       },
       {
         path: 'arts',
-        element: <Arts />,
-        action: artsAction,
+        element: <Arts />
       },
       {
         path: 'archive',
-        element: <Archive />,
-        action: archiveAction,
+        element: <Archive />
       },
       {
         path: 'userslist',
@@ -45,37 +43,27 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <UsersList />,
-            loader: usersLoader,
+            element: <UsersList />
           },
           {
             path: ':userId',
             id: 'user-detail',
-            loader: userDetailLoader,
             children: [
               {
                 index: true,
-                element: <UserPage />,
-                action: deleteEventAction,
-              },
-              {
-                path: 'edit',
-                element: <EditEventPage />,
-                action: manipulateEventAction,
+                element: <UserPage />
               },
             ],
           },
           {
             path: 'new',
-            element: <NewUserPage />,
-            action: manipulateEventAction,
+            element: <NewUserPage />
           },
         ],
       },
       {
         path: 'about',
-        element: <About />,
-        action: aboutAction,
+        element: <About />
       },
     ],
   },

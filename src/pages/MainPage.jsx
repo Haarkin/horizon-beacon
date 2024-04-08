@@ -1,16 +1,12 @@
+import MainNavigation from "../components/MainNavigation";
+
 function MainPage() {
     return (
         <div>
           {/* Header */}
           <header>
             {/* Primary Navigation */}
-            <nav>
-              <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contacts">Contacts</a></li>
-              </ul>
-            </nav>
+            <MainNavigation />
             
             {/* Auth Links */}
             <nav>
